@@ -42,8 +42,7 @@ namespace Clientes2S_Backend.Controllers
         [ResponseType(typeof(Contact))]
         public IQueryable<Contact> GetClientContacts(int id)
         {
-            return db.Contacts.Include(b => b.Client)
-                .Where(b => b.ClientId == id);
+            return db.Contacts.Where(b => b.ClientId == id);
         }
 
         // PUT: api/Clients/5
