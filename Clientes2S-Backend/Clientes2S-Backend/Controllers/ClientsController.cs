@@ -13,6 +13,7 @@ using Clientes2S_Backend.Models;
 
 namespace Clientes2S_Backend.Controllers
 {
+    [RoutePrefix("api/clients")]
     public class ClientsController : ApiController
     {
         private Clientes2S_BackendContext db = new Clientes2S_BackendContext();
@@ -34,6 +35,15 @@ namespace Clientes2S_Backend.Controllers
             }
 
             return Ok(client);
+        }
+
+        // GET: api/clients/1/contacts
+        [Route("{id:int}/contacts")]
+        [ResponseType(typeof(Contact))]
+        public IQueryable<Contact> GetClientContacts(int id)
+        {
+            return db.Contacts.Include(b => b.Client)
+                .Where(b => b.ClientId == id);
         }
 
         // PUT: api/Clients/5
