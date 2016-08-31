@@ -38,11 +38,21 @@ namespace Clientes2S_Backend.Controllers
         }
 
         // GET: api/clients/1/contacts
+        // Obtiene todos los contactos de un cliente.
         [Route("{id:int}/contacts")]
         [ResponseType(typeof(Contact))]
         public IQueryable<Contact> GetClientContacts(int id)
         {
             return db.Contacts.Where(b => b.ClientId == id);
+        }
+
+        // GET: api/clients/1/contacts
+        // Obtiene todos las tareas de un cliente.
+        [Route("{id:int}/jobs")]
+        [ResponseType(typeof(Job))]
+        public IQueryable<Job> GetClientjobs(int id)
+        {
+            return db.Jobs.Where(b => b.ClientId == id);
         }
 
         // PUT: api/Clients/5
