@@ -24,14 +24,8 @@ namespace Clientes2S_Backend.Models
 
         public string State { get; set; }
 
-        // Foreign Key
+        // "Foreign Key"
         public int MainContactId { get; set; }
-
-        // Navigation properties
-        public Contact MainContact { get; set; }
  
-        public ICollection<Job> Jobs { get; set; }
-
-        public ICollection<Contact> Contacts { get; set; }
     }
 }

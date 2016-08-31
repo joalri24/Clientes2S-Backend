@@ -25,10 +25,8 @@ namespace Clientes2S_Backend.Models
 
         public DateTime Date { get; set; }
 
-        // Foreign Key
+        // "Foreign Key"
         public int ContactId { get; set; }
 
-        // Navigation properties
-        public Contact Contact { get; set; }
     }
 }
