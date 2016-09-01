@@ -18,12 +18,21 @@ namespace Clientes2S_Backend.Controllers
         private Clientes2S_BackendContext db = new Clientes2S_BackendContext();
 
         // GET: api/Jobs
+        /// <summary>
+        /// Show all tasks.
+        /// </summary>
+        /// <returns></returns>
         public IQueryable<Job> GetJobs()
         {
             return db.Jobs;
         }
 
         // GET: api/Jobs/5
+        /// <summary>
+        /// Shows the info of a specified task.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [ResponseType(typeof(Job))]
         public async Task<IHttpActionResult> GetJob(int id)
         {
@@ -37,6 +46,12 @@ namespace Clientes2S_Backend.Controllers
         }
 
         // PUT: api/Jobs/5
+        /// <summary>
+        /// Edits the data of the Task specified with the id number given.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="job"></param>
+        /// <returns></returns>
         [ResponseType(typeof(void))]
         public async Task<IHttpActionResult> PutJob(int id, Job job)
         {

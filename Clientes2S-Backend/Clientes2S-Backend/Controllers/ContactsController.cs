@@ -18,12 +18,21 @@ namespace Clientes2S_Backend.Controllers
         private Clientes2S_BackendContext db = new Clientes2S_BackendContext();
 
         // GET: api/Contacts
+        /// <summary>
+        /// Show all contacts.
+        /// </summary>
+        /// <returns></returns>
         public IQueryable<Contact> GetContacts()
         {
             return db.Contacts;
         }
 
         // GET: api/Contacts/5
+        /// <summary>
+        /// Shows the info of a single contact.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [ResponseType(typeof(Contact))]
         public async Task<IHttpActionResult> GetContact(int id)
         {
@@ -35,8 +44,14 @@ namespace Clientes2S_Backend.Controllers
 
             return Ok(contact);
         }
-
+        
         // PUT: api/Contacts/5
+        /// <summary>
+        /// Edits the data of the Contact specified with the id number given.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="contact"></param>
+        /// <returns></returns>
         [ResponseType(typeof(void))]
         public async Task<IHttpActionResult> PutContact(int id, Contact contact)
         {
@@ -72,6 +87,11 @@ namespace Clientes2S_Backend.Controllers
         }
 
         // POST: api/Contacts
+        /// <summary>
+        /// Creates a new Contact using the data from the http body.
+        /// </summary>
+        /// <param name="contact"></param>
+        /// <returns></returns>
         [ResponseType(typeof(Contact))]
         public async Task<IHttpActionResult> PostContact(Contact contact)
         {

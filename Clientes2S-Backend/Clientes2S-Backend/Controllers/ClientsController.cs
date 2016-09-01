@@ -19,12 +19,21 @@ namespace Clientes2S_Backend.Controllers
         private Clientes2S_BackendContext db = new Clientes2S_BackendContext();
 
         // GET: api/Clients
+        /// <summary>
+        /// Show all Clients.
+        /// </summary>
+        /// <returns></returns>
         public IQueryable<Client> GetClients()
         {
             return db.Clients;
         }
 
         // GET: api/Clients/5
+        /// <summary>
+        /// Shows the info of a single Client.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [ResponseType(typeof(Client))]
         public async Task<IHttpActionResult> GetClient(int id)
         {
@@ -38,7 +47,11 @@ namespace Clientes2S_Backend.Controllers
         }
 
         // GET: api/clients/1/contacts
-        // Obtiene todos los contactos de un cliente.
+        /// <summary>
+        /// Gets all the contacts associated with the client.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [Route("{id:int}/contacts")]
         [ResponseType(typeof(Contact))]
         public IQueryable<Contact> GetClientContacts(int id)
@@ -47,7 +60,11 @@ namespace Clientes2S_Backend.Controllers
         }
 
         // GET: api/clients/1/contacts
-        // Obtiene todos las tareas de un cliente.
+        /// <summary>
+        /// Gets all the Tasks(Jobs) associated with the client.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [Route("{id:int}/jobs")]
         [ResponseType(typeof(Job))]
         public IQueryable<Job> GetClientjobs(int id)
@@ -56,6 +73,12 @@ namespace Clientes2S_Backend.Controllers
         }
 
         // PUT: api/Clients/5
+        /// <summary>
+        /// Edits the data of the Client specified with the id number given.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="client"></param>
+        /// <returns></returns>
         [ResponseType(typeof(void))]
         public async Task<IHttpActionResult> PutClient(int id, Client client)
         {
@@ -91,6 +114,11 @@ namespace Clientes2S_Backend.Controllers
         }
 
         // POST: api/Clients
+        /// <summary>
+        /// Creates a new Contact using the data from the http body.
+        /// </summary>
+        /// <param name="client"></param>
+        /// <returns></returns>
         [ResponseType(typeof(Client))]
         public async Task<IHttpActionResult> PostClient(Client client)
         {
