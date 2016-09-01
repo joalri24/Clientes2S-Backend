@@ -13,7 +13,7 @@ namespace Clientes2S_Backend.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201608312030559_Initial"; }
+            get { return "201609011419110_Initial"; }
         }
         
         string IMigrationMetadata.Source
