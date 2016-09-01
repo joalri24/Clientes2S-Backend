@@ -26,6 +26,8 @@ namespace Clientes2S_Backend.Models
 
         // "Foreign Key"
         public int MainContactId { get; set; }
- 
+
+        public bool Follow { get; set; }
+
     }
 }
