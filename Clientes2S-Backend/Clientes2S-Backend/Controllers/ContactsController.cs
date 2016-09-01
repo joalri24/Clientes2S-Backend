@@ -87,6 +87,8 @@ namespace Clientes2S_Backend.Controllers
         }
 
         // DELETE: api/Contacts/5
+        // The DELETE services are not necessary for this application.
+        /**
         [ResponseType(typeof(Contact))]
         public async Task<IHttpActionResult> DeleteContact(int id)
         {
@@ -100,7 +102,7 @@ namespace Clientes2S_Backend.Controllers
             await db.SaveChangesAsync();
 
             return Ok(contact);
-        }
+        }*/
 
         protected override void Dispose(bool disposing)
         {

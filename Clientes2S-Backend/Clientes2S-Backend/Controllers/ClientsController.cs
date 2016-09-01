@@ -106,6 +106,8 @@ namespace Clientes2S_Backend.Controllers
         }
 
         // DELETE: api/Clients/5
+        // The DELETE services are not necessary for this application.
+        /**
         [ResponseType(typeof(Client))]
         public async Task<IHttpActionResult> DeleteClient(int id)
         {
@@ -119,7 +121,7 @@ namespace Clientes2S_Backend.Controllers
             await db.SaveChangesAsync();
 
             return Ok(client);
-        }
+        }*/
 
         protected override void Dispose(bool disposing)
         {

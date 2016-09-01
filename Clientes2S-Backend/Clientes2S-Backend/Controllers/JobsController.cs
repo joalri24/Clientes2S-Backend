@@ -72,6 +72,11 @@ namespace Clientes2S_Backend.Controllers
         }
 
         // POST: api/Jobs
+        /// <summary>
+        /// Creates a new job using the data given in the http body.
+        /// </summary>
+        /// <param name="job"></param>
+        /// <returns></returns>
         [ResponseType(typeof(Job))]
         public async Task<IHttpActionResult> PostJob(Job job)
         {
@@ -87,6 +92,8 @@ namespace Clientes2S_Backend.Controllers
         }
 
         // DELETE: api/Jobs/5
+        // The DELETE services are not necessary for this application.
+        /**
         [ResponseType(typeof(Job))]
         public async Task<IHttpActionResult> DeleteJob(int id)
         {
@@ -100,7 +107,7 @@ namespace Clientes2S_Backend.Controllers
             await db.SaveChangesAsync();
 
             return Ok(job);
-        }
+        }*/
 
         protected override void Dispose(bool disposing)
         {
